@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>WAPH</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Include AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="site.js"></script>
+    <script src="https://waph-uc.github.io/clock.js"></script>
+    <style>
+    .custom-container {
+            padding: 40px; /* Add padding to all sides */
+        }
+    </style>
+</head>
+<body>	
+	<div class="custom-container">
+
+		<div class="row">
+			<div class="col-md-9" style="background-color: #f0f0f0; border-radius: 15px;">				
+				<h1 class="text-center">Vamsidhar Reddy Katasani</h1>
+				<h5 class="text-center">Cincinnati,OH | katasavy@mail.uc.edu | 859.609.9682</h5>	
+				<hr style="height:1px;background-color: black;border:0">				
+				<div class="custom-container" style="background-color: lightblue; border-radius: 20px; padding:20px;">
+					<h4>Technical Skills</h4>
+					<ul>
+				        <li><b>UI Skills : </b>JavaScript, JQuery, HTML, CSS</li>
+				        <li><b>Back-end Skills : </b>C Sharp, Python</li>
+				        <li><b>Database Management : </b>Microsoft SQL Server</li>
+				        <li><b>Source Control : </b>GitHub, TFS</li>
+				        <li><b>Dev Operations : </b>Azure Devops</li>
+				        <li><b>Sprint Management : </b>Agile, Kanban</li>				        
+				        <li><b>Operating Systems : </b>Windows, Linux</li>				        
+				    </ul>	
+				</div>
+				<br>
+				<div class="custom-container" style="background-color: lightseagreen; border-radius: 20px; padding:20px;">
+					<h4>Professional Experience</h4>
+					<ul><h5>ACCENTURE</h5>
+				        <li>Full Stack developer for Agriscience web application with UI, Middleware, and Backend technology skills.</li>
+				        <li>Developed web applications using ASP.Net MVC, ASP .Net Core, Core API and MS SQL.</li>
+				        <li>Incorporated Agile, Kanban, Azure DevOps throughout for managing and tracking development work. </li>
+				        <li>Streamlined and negotiated requirements with product owner for developmental work.</li>
+				        <li>Collaborated with both offshore and onshore teams for multiple process discussions and knowledge transfer meetings.</li>
+				        <li>Completed online Internship certification on Information Security.</li>
+				    </ul>	
+				</div>
+				<br>
+				<div class="custom-container" style="background-color: greenyellow; border-radius: 20px; padding:20px;">
+					<h4>Education</h4>
+					<h5>University of Cincinnati</h5>
+					<h6>Masters in Information Technology</h6>
+					<br>
+					<h5>Rajiv Gandhi University of Knowledge Technologies</h5>
+					<h6>Bachelor of Technology in Electronics and Communications Engineering</h6>
+				</div>
+				
+			</div>
+			<div class="col-md-3" style="background-color: powderblue; border-radius: 15px;">		
+				<h2 class="text-center">Check out Implementations</h2>
+				<hr style="height:1px;background-color: black;border:0">	
+				<div class="text-center"ng-controller="myCtrl">
+					<button class="btn btn-primary" ng-click="openWAPHCourse()">Click for course 
+					details!</button>
+				</div>
+				<br>
+				<div id="email" class="text-center" style="background-color:yellow; border-radius:5px;display:inline-block;margin-left:100px" onclick="showHideEmail()">Show my email</div>
+				<br><br>
+				<div class="text-center" id="digital-clock"></div>
+				<hr style="height:0.5px;background-color: black;border:0">
+
+				<canvas id="analog-clock" width="150" height="150" style="background-color:
+				#999;margin-left:80px"></canvas>
+				<hr style="height:0.5px;background-color: black;border:0">
+				<div id="image"></div>
+				<div id="response"></div>
+			</div>
+		</div>
+		
+	</div>
+
+
+    <div class="container mt-5" ng-controller="myCtrl">
+        <h2>AngularJS and jQuery Example with Bootstrap</h2>
+        
+        <!-- AngularJS Input Box and Button -->
+        <div class="form-group">
+            <input type="text" class="form-control" ng-model="angularInput" placeholder="Enter text">
+        </div>
+        <button class="btn btn-primary" ng-click="displayAngularText()">Display Angular Text</button>
+        <br><br>
+        
+        <!-- jQuery Input Box and Button -->
+        <div class="form-group">
+            <input type="text" class="form-control" id="jqueryInput" placeholder="Enter text">
+        </div>
+        <button class="btn btn-primary" id="jqueryButton">Display jQuery Text</button>
+        <br><br>
+        
+        <!-- Display Text -->
+        <div>
+            <strong>Angular Text:</strong> {{ angularText }}
+        </div>
+        <div>
+            <strong>jQuery Text:</strong> <span id="jqueryText"></span>
+        </div>
+    </div>
+
+    <script>
+    	//analog clock
+	    var canvas=document.getElementById("analog-clock");
+	    var ctx=canvas.getContext("2d");
+	    var radius=canvas.height/2;
+	    ctx.translate(radius,radius);
+	    radius=radius*0.90;
+	    setInterval(drawClock,1000);
+
+	    function drawClock(){
+	          drawFace(ctx,radius);
+	          drawNumbers(ctx,radius);
+	          drawTime(ctx,radius);
+	        }
+
+
+        // Initialize AngularJS App
+        var app = angular.module('myApp', []);
+
+        // Define AngularJS Controller
+        app.controller('myCtrl', function($scope) {
+            $scope.angularInput = '';
+            $scope.angularText = '';
+
+            // Function to display AngularJS text
+            $scope.displayAngularText = function() {
+                $scope.angularText = $scope.angularInput;
+            };
+            $scope.openWAPHCourse = function() {
+                var url = 'https://example.com'; // Specify the URL here
+                window.open(url, '_blank');
+            };
+        });
+
+        // jQuery Functionality
+        $(document).ready(function() {
+            $('#jqueryButton').click(function() {
+                var text = $('#jqueryInput').val();
+                $('#jqueryText').text(text);
+            });
+            jokeAPIHit();
+            guessAge();          
+
+        });        	
+    </script>
+</body>
+</html>
