@@ -34,15 +34,18 @@ function jokeAPIHit(){
 setInterval(jokeAPIHit,10000);
 
 async function guessAge(){
-      const response=await fetch("https://xkcd.com/info.0.json");
-      const result=await response.json();
-      
-      if(result==null || result.img==null || result.img==""){
-        alert("Did not receive output from agify API");
-        }       
-      else{
-        $("#image").html(result.img);
-        }
+      var head=new Headers();
+      head.append('Access-Control-Allow-Origin', 'https://katasavy15.github.io');
+      head.append('Access-Control-Allow-Credentials', 'true');
+      $.ajax({
+      url: 'https://xkcd.com/info.0.json',
+      type: 'post',
+      headers: head,
+      dataType: 'json',
+      success: function (data) {
+          console.info(data);
+      }
+  });
         
     }
 
