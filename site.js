@@ -33,25 +33,9 @@ function jokeAPIHit(){
 }
 setInterval(jokeAPIHit,10000);
 
-async function guessAge(){
-      var head=new Headers();
-      head.append('Access-Control-Allow-Origin', 'https://katasavy15.github.io');
-      head.append('Access-Control-Allow-Credentials', 'true');
-      $.ajax({
-      url: 'https://xkcd.com/info.0.json',
-      type: 'post',
-      headers: head,
-      dataType: 'json',
-      success: function (data) {
-          console.info(data);
-      }
-  });
-        
-    }
 
 function encodeInput(input){
       const encodedData=document.createElement('div');
       encodedData.innerText=input;
       return encodedData.innerHTML;
 }
-
