@@ -10,7 +10,7 @@
 
 **Short-bio**: Vamsidhar is a graduate student pursuing Master's in Information Technology at University of Cincinnati. Prior to his studies he has had some experience in web application development.
 
-![Vamsidhar's headshot](/home/katasavy/katasavy15.github.io/images/photo.jpg)
+![Vamsidhar's headshot](/images/photo.jpg)
 
 ## Repository Information
 
@@ -55,18 +55,18 @@ As part of this project the knowledge gained from the lectures until now is utli
 
 Below three images are for `index.html`
 
-![Fig1](/home/katasavy/katasavy15.github.io/images/Fig1.png)
+![Fig1](/images/Fig1.png)
 
 
-![Fig2](/home/katasavy/katasavy15.github.io/images/Fig2.png)
+![Fig2](/images/Fig2.png)
 png
 
-![Fig3](/home/katasavy/katasavy15.github.io/images/Fig3.png)
+![Fig3](/images/Fig3.png)
 
 
 Below two images are for `waph.html`
 
-![Fig4](/home/katasavy/katasavy15.github.io/images/Fig4.png)
+![Fig4](/images/Fig4.png)
 
 
-![Fig5](/home/katasavy/katasavy15.github.io/images/Fig5.png)
+![Fig5](/images/Fig5.png)
