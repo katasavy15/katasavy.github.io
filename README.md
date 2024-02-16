@@ -10,7 +10,7 @@
 
 **Short-bio**: Vamsidhar is a graduate student pursuing Master's in Information Technology at University of Cincinnati. Prior to his studies he has had some experience in web application development.
 
-![Vamsidhar's headshot](/images/Mine.jpg)
+![Vamsidhar's headshot](images/photo.jpg)
 
 ## Repository Information
 
