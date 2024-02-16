@@ -31,7 +31,7 @@ function jokeAPIHit(){
       }
     );
 }
-setInterval(jokeAPIHit,10000);
+setInterval(jokeAPIHit,60000);
 
 
 function encodeInput(input){

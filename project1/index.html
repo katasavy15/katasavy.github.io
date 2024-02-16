@@ -17,12 +17,13 @@
         }
     </style>
 </head>
-<body>	
+<body>
+	<div id="welcome" class="container-fluid text-center" style="background-color: lightpink;"></div>
 	<div class="custom-container">
 
 		<div class="row">
 			<div class="col-md-9" style="background-color: #f0f0f0; border-radius: 15px;">				
-				<h1 class="text-center">Vamsidhar Reddy Katasani</h1>
+				<img src="photo.jpg" alt="My headshot" width="90"><h1 class="text-center">Vamsidhar Reddy Katasani</h1>
 				<h5 class="text-center">Cincinnati,OH | katasavy@mail.uc.edu | 859.609.9682</h5>	
 				<hr style="height:1px;background-color: black;border:0">				
 				<div class="custom-container" style="background-color: lightblue; border-radius: 20px; padding:20px;">
@@ -109,6 +110,8 @@
 	</div>
 
     <script>
+    	
+
     	//analog clock
 	    var canvas=document.getElementById("analog-clock");
 	    var ctx=canvas.getContext("2d");
@@ -172,6 +175,13 @@
 
         // jQuery Functionality
         $(document).ready(function() {
+        	if (!document.cookie.includes('visit')){
+				document.getElementById('welcome').innerHTML="<h4>Welcome to my page!</h4>";
+				document.cookie = "<h4>Welcome! Your last visit was on: "+ (new Date()).toString()+"</h4>";
+			}
+			else{
+				document.getElementById('welcome').innerHTML=""+document.cookie;
+			}
             
             var key = '9b0377031eb04833a45e0b6dffc5ec6d'; 
 
